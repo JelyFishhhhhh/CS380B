@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>My Form</title>
+    </head>
+    <body>
+        <h1>Courses Satisfy </h1>
+            <form method="post">
+            <p>
+                <label>
+                    Courses Number
+                </label>
+                <select name="rating">
+                    <option selected>CS106</option>
+                    <option>CS125</option>
+                    <option>CS140</option>
+                    <option>CS147</option>
+                    <option>CS149</option>
+                    <option>CS380</option>
+                </select>
+            </p>
+            <br>
+            <p>
+                <label>Your Name</label>
+                <input type="text">
+            </p>
+            <br>
+            <p>
+                <label>Phone Number</label>
+                <input type="password">
+            </p>
+            <br>
+            <p>
+                <label>Comments</label>
+                <textarea name="comments" rows="4" cols="36">Enter Comments Here</textarea>
+            </p>
+            <p>
+                <label>Why You Choose This Course?(MultiSelect)</label>
+                <input type="radio">Easy2Pass
+                <input type="radio">Friends
+            </p>
+            <p>
+                <label>Score the Course</label>
+                <input type="checkbox">100
+                <input type="checkbox">50
+                <input type="checkbox">0
+            </p>
+            <p>
+                <label></label>
+                <input type="submit" value="Submit">
+                <input type="reset" value="Clear">
+            </p>
+        </form>
+    </body>
+</html>
