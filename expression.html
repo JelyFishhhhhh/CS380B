@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>My Form</title>
+    </head>
+    <body>
+        <form method="post" action="www.google.com">
+            <label>學號</label>
+            <input type="學號" placeholder="sxxxxxxx" pattern="s\d{7}" required>
+            <br><br>
+            <label>市話</label>
+            <input type="tel" placeholder="(XX) -XXXXXXX" pattern="(\(\d{2}\)\d{3}-\d{4}) | (\(\d{2}\)\d{4}-\d{4}) | (\(\d{3}\)\d{3}-\d{3})" required>
+            <br><br>
+            <label>Mail</label>
+            <input type="text" placeholder="*@mail.yzu.edu.tw" pattern="((s\d{6,7}@mail)|([A-Za-z][A-Za-z0-9]@satrun))\.yzu\.edu\.tw" required>
+
+            
+            <br><br>
+            <label></label>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Clear">
+        </form>
+    </body>
+</html>
