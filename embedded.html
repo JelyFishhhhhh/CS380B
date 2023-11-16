@@ -4,8 +4,29 @@
         <meta charset="utf-8">
         <title>Embedded Style Sheet</title>
         <style type="text/css">
-            .bigTitle{
-                color: #0abab5;
+            h1 { 
+                position:relative;
+                color: #666;
+                display:inline-block; 
+                margin:0;
+                text-transform:uppercase;
+                text-align:center;
+                line-height:1.2em; 
+            }
+            h1:after, h1:before {
+                display:block;
+                content: '';
+                border-bottom: solid 3px #019fb6;  
+                transform: scaleX(0);  
+                transition: transform 250ms ease-in-out;
+            }
+            h1:before{
+                position:absolute;
+                bottom:1.2em; left:0;
+                width:100%;
+            }
+            h1:hover:after, h1:hover:before { 
+                transform: scaleX(1); 
             }
         </style>
     </head>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+    <head>
+        <meta charset="utf-8">
+        <title>css- position</title>
+        @media all{
+            
+            background-color: SteelBlue;
+        }
+        
+        @media print{
+            
+            background-color: white;
+        }
+
+
+        @media screen and (min)
+
+        <style type="text/css">
+            p{
+                
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 24px;
+                position: relative;
+            }
+            .left{
+                
+                left: -20px;
+            }
+            .absolute{
+                
+                color: red;
+                position: absolute;
+                left: 20px;
+                top: 35px;
+            }
+            .right{
+                
+                right: -20px;
+            }
+        </style>
+
+    </head>
+    <body>
+        <p>TEST Normal</p>
+        <p class="absolute">TEST absolute Left 20px Top 35px</p>
+        <p class="left">TEST Left 20px</p>
+        <p class="right">TEST Right 20px</p>
+    </body>
+</html>
