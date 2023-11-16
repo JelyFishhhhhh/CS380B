@@ -7,13 +7,13 @@
             function randomColor(){
 
                 var box= document.getElementById("box");
-                box.style.backgroundColor= 'rgb(' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ')';;
+                box.style.backgroundColor= 'rgb(' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ')';
             }
         </script>
     </head>
     <body>
         <input type="button" onclick=randomColor() style="width: 350px; height: 25px;" value="Random Color">
-        <br><br><br>
+        <br>
         <div id="box" style="width: 350px; height: 350px;"></div>
     </body>
 </html>
