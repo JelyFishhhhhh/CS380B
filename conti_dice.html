@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+    <head>
+        <meta charset="utf-8">
+        <title>Fibinacci Number Generator</title>
+        <script>
+            function contiRandom(n){
+
+                rand= new Array(n);
+                for(var i= 0; i< n; i++){
+
+                    rand[i]= Math.floor(Math.random() * 6000)% 6+ 1;
+                }
+                return rand;
+            }
+            function main(){
+
+                num= window.prompt("Input a number about how many times you wanna row the dice");
+                rand= contiRandom(num);
+                for(var i= 0; i< num; i++){
+
+                    document.writeln("<img src= \"./dice/dice"+ rand[i]+ ".png\">");
+                }
+                document.writeln("<br>Results:<br>");
+                for(var i= 0; i< num; i++){
+
+                    document.writeln(rand[i]+"<br>");
+                }
+            }
+            
+        </script>
+    </head>
+    <body>
+        <input type="button" onclick=main() style="width: 350px; height: 25px;" value="Generate!">
+        <br>
+        <div id="box" style="width: 350px; height: 350px;"></div>
+    </body>
+</html>

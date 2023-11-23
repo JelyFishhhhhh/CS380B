@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+    <head>
+        <meta charset="utf-8">
+        <title>Fibinacci Number Generator</title>
+        <script>
+            function fib(n){
+
+                if (n== 0 | n== 1){
+
+                    return 1;
+                }
+                return fib(n- 1)+ fib(n- 2);
+            }
+            function main(){
+
+                num= window.prompt("Input a number to calculate its fibinacci number");
+                document.writeln("<h1>Fibinacci Number of 0 to "+ num+ "</h1><br>");
+                for(var i= 0; i<= num; i++){
+
+                    document.writeln("F["+ i+ "]= "+fib(i)+ "<br>");
+                }
+
+            }
+            
+        </script>
+    </head>
+    <body>
+        <input type="button" onclick=main() style="width: 350px; height: 25px;" value="Generate!">
+        <br>
+        <div id="box" style="width: 350px; height: 350px;"></div>
+    </body>
+</html>
