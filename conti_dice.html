@@ -2,7 +2,7 @@
 <html lang="zh-tw">
     <head>
         <meta charset="utf-8">
-        <title>Fibinacci Number Generator</title>
+        <title>Continue Dice</title>
         <script>
             function contiRandom(n){
 
@@ -13,19 +13,23 @@
                 }
                 return rand;
             }
+            
             function main(){
 
-                num= window.prompt("Input a number about how many times you wanna row the dice");
-                rand= contiRandom(num);
+                var dice= document.getElementById("dice");
+                var num= window.prompt("Input a number about how many times you wanna row the dice");
+                var rand= contiRandom(num);
                 for(var i= 0; i< num; i++){
 
-                    document.writeln("<img src= \"./dice/dice"+ rand[i]+ ".png\">");
+                    dice.setAttribute("src", "./dice/dice"+ rand[i]+ ".png");
+                    dice.setAttribute("alt", "dice"+ rand[i]);
                 }
-                document.writeln("<br>Results:<br>");
-                for(var i= 0; i< num; i++){
-
-                    document.writeln(rand[i]+"<br>");
-                }
+                // document.writeln("<br>Results:<br>");
+                // for(var i= 0; i< num; i++){
+                    
+                //     document.writeln(rand[i]);
+                // }
+                // document.writeln("<br>");
             }
             
         </script>
@@ -33,6 +37,8 @@
     <body>
         <input type="button" onclick=main() style="width: 350px; height: 25px;" value="Generate!">
         <br>
-        <div id="box" style="width: 350px; height: 350px;"></div>
+        <div id="box" style="width: 350px; height: 350px;">
+            <img src="" alt="" id="dice">
+        </div>
     </body>
 </html>
