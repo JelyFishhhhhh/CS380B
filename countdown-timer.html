@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+    <head>
+        <meta charset="utf-8">
+        <title>Countdown-Timer</title>
+        <script>
+
+            var interval= null;
+            var second= 60;
+            function start(){
+                if (interval){
+
+                    return;
+                }
+                interval = window.setInterval("run()", 1000);
+            }
+            function run(){
+                
+                second--;
+                document.getElementById("Counter").innerHTML= second;
+                if(second<= 0){
+
+                    stop();
+                }
+            }
+            function stop(){
+
+                window.clearInterval(interval);
+                interval= null;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Counter</h1>
+        <span id="Counter">60</span>
+        <input type="button" value="Start" onclick=start()>
+    </body>
+</html>
