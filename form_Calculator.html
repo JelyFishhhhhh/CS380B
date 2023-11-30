@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+    <head>
+
+        <meta charset="utf-8">
+        <title>Calculator in Form Version</title>
+        <script>
+
+            function calc(){
+
+                var x= document.forms;
+                var num1= parseInt(x[0].n1.value);
+                var num2= parseInt(x[0].n2.value);
+                var ans= 0;
+                switch (x[0].operator.value){
+
+                    case "+":
+                        ans= num1+ num2;
+                    break;
+                    
+                    case "-":
+                        ans= num1- num2;
+                    break;
+                    
+                    case "*":
+                        ans= num1* num2;
+                    break;
+                    
+                    case "/":
+                        ans= num1/ num2;
+                    break;
+                }
+                document.getElementById("results").innerHTML= ans;
+            }
+        </script>
+    </head>
+    <body>
+
+        <form action="#">
+            <input type="text" name="n1">
+            <select name="operator">
+                <option>+</option>
+                <option>-</option>
+                <option>*</option>
+                <option>/</option>
+            </select>
+            <input type="text" name="n2">
+            <input type="button" onclick= calc() value="=">
+            <span id="results"></span>
+        </form>
+    </body>
+</html>

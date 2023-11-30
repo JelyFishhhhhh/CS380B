@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+    <head>
+
+        <meta charset="utf-8">
+        <title>Random Dice Optimistic ver</title>
+        <script>
+
+            function contiRandom(n){
+                
+                rand= new Array(n);
+                for(var i= 0; i< n; i++){
+                    
+                    rand[i]= Math.floor(Math.random() * 6000)% 6+ 1;
+                }
+                return rand;
+            }
+            function main(){
+                
+                var x= document.images;
+                list= contiRandom(4);
+                for(var i= 0; i< list.length; i++){
+
+                    // x[i].setAttribute("src", "./dice/dice"+ list[i]+".png", );
+                    // x[i].setAttribute("alt", "./dice/dice"+ list[i]+".png", );
+                    x[i].src= "./dice/dice"+ list[i]+".png";
+                    x[i].alt= "./dice/dice"+ list[i]+".png";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Collllllllllllllection</h1>
+        <input type="button" value="Roll the Dice!" onclick= main()>
+        <br>
+        <br>
+        <img src="" alt="">
+        <img src="" alt="">
+        <img src="" alt="">
+        <img src="" alt="">
+    </body>
+</html>
