@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+    <head>
+
+        <meta charset="utf-8">
+        <title>Calculator in Form Version</title>
+        <script>
+
+            // var color= window.prompt("Input your Favorite Color...");
+            var x= document.forms;
+            function color_selector(){
+
+                document.body.style.backgroundColor= x[0].selector.value;
+            }
+            
+        </script>
+    </head>
+    <body>
+        <form action="#">
+            <input type = "color" name="selector" autofocus />
+            <span><- Click Me</span>
+            <br><br>
+            <input type = "button" onclick= color_selector() value="Change Color">
+            <br><br>
+        </form>
+    </body>
+</html>
