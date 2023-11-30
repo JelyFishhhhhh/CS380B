@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+    <head>
+
+        <meta charset="utf-8">
+        <title>Random Dice Optimistic ver</title>
+        <script>
+
+            var interval= null;
+            function start(){
+                if (interval){
+
+                    return;
+                }
+                interval = window.setInterval("run(3)", 35);
+            }
+            function run(n){
+                
+                var x= document.images;
+                rand= new Array(n);
+                for(var i= 0; i< n; i++){
+                    
+                    rand[i]= Math.floor(Math.random() * 6000)% 6+ 1;
+                    x[i].src= "./dice/dice"+ rand[i]+".png";
+                    x[i].alt= "./dice/dice"+ rand[i]+".png";
+                }
+            }
+            function stop(){
+
+                window.clearInterval(interval);
+                interval= null;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Running Dice</h1>
+        <input type="button" value="Roll the Dice!" onclick= start()>
+        <input type="button" value="Stop the Dice!" onclick= stop()>
+        <br>
+        <br>
+        <img src="" alt="">
+        <img src="" alt="">
+        <img src="" alt="">
+    </body>
+</html>
