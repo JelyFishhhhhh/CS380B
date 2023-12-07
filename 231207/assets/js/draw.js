@@ -1,0 +1,9 @@
+function erase(){
+
+    
+}
+
+function draw(){
+
+    
+}
