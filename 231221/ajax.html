@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Sample Database Query</title>
+      <style type = "text/css">
+        body  { font-family: sans-serif;
+                background-color: lightyellow; }
+        table { background-color: lightblue;
+                border-collapse: collapse;
+                border: 1px solid gray; }
+        td    { padding: 5px; }
+        tr:nth-child(odd) { background-color: white; }
+     </style>
+      <script>
+        function progress() {
+            var sel = $("#select").val();
+            var key = $("#key").val();
+            $.ajax({
+                url: "ajax.php",
+                data: {
+                    select: sel,
+                    key: key,
+                },
+                type: "POST",
+                datatype: "html",
+                success: function( output ) {
+                    $( "#out" ).html(output);
+                },
+                error : function(){
+                    alert( "Request failed." );
+                }
+            });
+        }
+      </script>
+
+   </head>
+    <body>
+        <h1>Querying a MySQL database.</h1>
+        <form method = "post" action = "#">
+            <p>Select a field to display:
+                <select id = "select">
+                    <option selected>ID</option>
+                    <option>Title</option>
+                    <option>Category</option>
+                    <option>ISBN</option>
+                </select>
+                <input id="key" type="text">
+                <input id = "submit" type="button" value = "Send Query" onclick="progress()">
+            </p>
+        </form>
+        <div id="out"></div>
+    </body>
+</html>
