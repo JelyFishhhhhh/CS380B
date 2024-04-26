@@ -133,3 +133,7 @@ config.json
 .tmp/
 results/
 php.ini
+
+confidential/
+confidential.html
+confidential.php

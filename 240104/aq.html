@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+
+    <!-- Change the API_KEY to your Google Cloud API KEY -->
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=API_KEY"></script>
+    <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>	
+    <script>
+    $(function(){
+	var map = new google.maps.Map(document.getElementById('map'), {
+	    center: {lat: 24.9699054, lng:121.264305 },
+	    zoom: 14
+	});
+	$.getJSON( "aq.php", function( out ) {
+	var results = out.records;
+	    $.each(results,function(i,item){
+	        var lat = item["latitude"];
+		var lng = item["longitude"];
+	        var value = parseInt(item["pm2.5"]);
+	        var name = item["sitename"];
+	    	var myCenter=new google.maps.LatLng(lat,lng);
+		var icon="";
+		if (value > 30)
+		{
+		    icon = "http://maps.google.com/mapfiles/ms/icons/red-dot.png";
+		}
+		else if (value>20)
+		{
+		    icon = "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png";
+		}
+		else if (value>10)
+		{
+		    icon = "http://maps.google.com/mapfiles/ms/icons/blue-dot.png";
+		}
+		else 
+		{
+		    icon = "http://maps.google.com/mapfiles/ms/icons/green-dot.png";
+		}
+		var marker=new google.maps.Marker({
+		    position:myCenter,
+		    icon : icon
+		});
+	    	marker.setMap(map);
+		var infowindow = new google.maps.InfoWindow({
+		    content:name+":"+value
+		});
+		google.maps.event.addListener(marker, 'click', function() {
+		    infowindow.open(map,marker);
+		});
+	    });
+	});
+    });
+    </script>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+   </body>
+</html>

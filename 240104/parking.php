@@ -1,4 +1,5 @@
 <?php
+
     header("Access-Control-Allow-Origin: *");
     $district = $_POST["district"];
     $district = strtolower($district);
@@ -19,4 +20,5 @@
         }
     }
     print ("</table>");
+
 ?>
